@@ -228,7 +228,7 @@ namespace Commons.Music.Midi.AndroidExtensions
 			public override void OnSend (byte [] msg, int offset, int count, long timestamp)
 			{
 				if (parent.MessageReceived != null)
-					parent.MessageReceived (this, new MidiReceivedEventArgs () {
+					parent.MessageReceived (parent, new MidiReceivedEventArgs () {
 						Data = offset == 0 && msg.Length == count ? msg : msg.Skip (offset).Take (count).ToArray (),
 						Timestamp = timestamp });
 			}
