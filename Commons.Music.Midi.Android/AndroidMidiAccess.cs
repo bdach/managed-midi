@@ -230,6 +230,8 @@ namespace Commons.Music.Midi.AndroidExtensions
 				if (parent.MessageReceived != null)
 					parent.MessageReceived (parent, new MidiReceivedEventArgs () {
 						Data = offset == 0 && msg.Length == count ? msg : msg.Skip (offset).Take (count).ToArray (),
+						Start = 0,
+						Length = count,
 						Timestamp = timestamp });
 			}
 		}
