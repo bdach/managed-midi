@@ -47,6 +47,6 @@ jobs:
         run: nuget pack -Version 1.0-${{ steps.commit-hash.outputs.short }}
         
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           path: ./*.nupkg
